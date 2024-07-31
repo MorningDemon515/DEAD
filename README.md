@@ -6,6 +6,8 @@ DEAD stands for Direct Electronic Audio Display (not the one you think), which i
 
 You need to add the source code from src to your code and correctly include and link third party libraries in the third-party folder 
 
+You can build an example
+
 # Document
 
 You can access online documents ： http://deadlib.free.nf
