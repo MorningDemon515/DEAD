@@ -24,6 +24,6 @@ You can access online documents ： http://deadlib.free.nf
 - Then enter:
 - mkdir build
 - cd build
-- cmake -G "Visual Studio 16 2019" .. 
+- cmake -G "MinGW Makefiles" .. 
 - cmake --build .
 - Construction completed! You can find DEAD.lib and DEAD.dll in build\debug\
