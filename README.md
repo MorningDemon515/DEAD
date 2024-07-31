@@ -14,7 +14,7 @@ You can access online documents ： http://deadlib.free.nf
 
 ## Require
 
-- You need Visual Studio 2019 or higher version
+- You need MinGW-w64devkit : https://github.com/skeeto/w64devkit/releases
 - You need CMake v3.16 or higher version
 
 ## Start Build
