@@ -28,4 +28,4 @@ You can access online documents ： http://deadlib.free.nf
 - cd build
 - cmake -G "MinGW Makefiles" .. 
 - cmake --build .
-- Construction completed! You can find DEAD.lib and DEAD.dll in build\debug\
+- Construction completed! You can find DEAD.lib and DEAD.dll in build\
