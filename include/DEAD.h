@@ -21,7 +21,6 @@ typedef float DEADfloat;
 
    DEAD(void) DEAD_Init();
 
-   DEAD(DEADuint) DEAD_Set_Audio(DEADuint buffer);
    DEAD(void) DEAD_Set_Audio2D(DEADuint s, DEADfloat x,DEADfloat y);
    DEAD(void) DEAD_Set_Audio3D(DEADuint s, DEADfloat x,DEADfloat y,DEADfloat z);
    DEAD(void) DEAD_Loop_Audio(DEADuint s);
@@ -37,7 +36,6 @@ typedef float DEADfloat;
    DEAD(int) DEAD_Get_Error();
 
    DEAD(void) DEAD_Free();
-   DEAD(void) DEAD_Free_Buffer(DEADuint buffer);
    DEAD(void) DEAD_Free_Audio(DEADuint audio);	
 	
 

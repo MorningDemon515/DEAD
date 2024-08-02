@@ -2,17 +2,14 @@
 #include "..\include\DEAD.h"
 #include "..\DEAD-Func\DEADLoadAudio.h"
 #include "..\DEAD-Func\DEADPlayAudio.h"
-#include "..\DEAD-Func\DEADSetAudio.h"
 #include "..\DEAD-Func\DEADOther.h"
 
 DEADLoadAudio LAInstance;
-DEADSetAudio SAInstance;
 DEADPlayAudio PAInstance;
 DEADOther OHInstance;
 
 AL al;
 DEADLoadAudio* LA = &LAInstance;
-DEADSetAudio* SA = &SAInstance;
 DEADPlayAudio* PA = &PAInstance;
 DEADOther* OH = &OHInstance;
 
@@ -64,11 +61,6 @@ DEAD(DEADuint) DEAD_Load_MPEG4(const char* file)
 DEAD(void) DEAD_Init()
 {
     al.Init();
-}
-
-DEAD(DEADuint) DEAD_Set_Audio(DEADuint buffer)
-{
-    return SA->SetAudio(buffer);
 }
 
 DEAD(void) DEAD_Set_Audio2D(DEADuint s, DEADfloat x,DEADfloat y)
@@ -135,11 +127,6 @@ DEAD(int) DEAD_Get_Error()
 DEAD(void) DEAD_Free()
 {
     al.Free();
-}
-
-DEAD(void) DEAD_Free_Buffer(DEADuint buffer)
-{
-    alDeleteBuffers(1, &buffer);
 }
 
 DEAD(void) DEAD_Free_Audio(DEADuint audio)
