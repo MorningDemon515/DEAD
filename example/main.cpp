@@ -11,7 +11,7 @@ int main()
     DEAD_Init();
     DEAD_Get_Error();
 
-    std::cout<<"输入文件名\n";
+    std::cout<<"Enter File Name\n";
     std::cin>>file;
 
     audio = DEAD_Load_OGG(file.c_str());
