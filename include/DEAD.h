@@ -18,7 +18,6 @@ DEADuint DEAD_Load_MPEG4(const char* file);
 
 void DEAD_Init();
 
-DEADuint DEAD_Set_Audio(DEADuint buffer);
 void DEAD_Set_Audio2D(DEADuint s, DEADfloat x, DEADfloat y);
 void DEAD_Set_Audio3D(DEADuint s, DEADfloat x, DEADfloat y, DEADfloat z);
 void DEAD_Loop_Audio(DEADuint s);
@@ -34,7 +33,6 @@ void DEAD_Play_AudioToEnd(DEADuint s);
 int DEAD_Get_Error();
 
 void DEAD_Free();
-void DEAD_Free_Buffer(DEADuint buffer);
 void DEAD_Free_Audio(DEADuint audio);
 
 #endif // DEAD_H

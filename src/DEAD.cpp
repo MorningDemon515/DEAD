@@ -12,6 +12,7 @@ ALCcontext *context;
 DEADuint DEAD_Load_OGG(const char* file)
 {
     ALuint buffer;
+    ALuint source;
 
     std::vector<char> data;
     ALenum format;
@@ -20,12 +21,17 @@ DEADuint DEAD_Load_OGG(const char* file)
     alGenBuffers(1, &buffer);
     if(!LoadOGGFile(file,data, format, freq)) {}
     alBufferData(buffer, format, data.data(), data.size(), freq);
-    return buffer;
+    
+    alGenSources(1, &source);
+    alSourcei(source, AL_BUFFER, buffer);
+    return source;
+    alDeleteBuffers(1, &buffer);
 }
 
 DEADuint DEAD_Load_WAV(const char* file)
 {
     ALuint buffer;
+    ALuint source;
 
     std::vector<char> data;
     ALenum format;
@@ -34,12 +40,17 @@ DEADuint DEAD_Load_WAV(const char* file)
     alGenBuffers(1, &buffer);
     if(!LoadWAVFile(file,data, format, freq)) {}
     alBufferData(buffer, format, data.data(), data.size(), freq);
-    return buffer;
+    
+    alGenSources(1, &source);
+    alSourcei(source, AL_BUFFER, buffer);
+    return source;
+    alDeleteBuffers(1, &buffer);
 }
 
 DEADuint DEAD_Load_MP3(const char* file)
 {
     ALuint buffer;
+    ALuint source;
 
     std::vector<char> data;
     ALenum format;
@@ -48,12 +59,17 @@ DEADuint DEAD_Load_MP3(const char* file)
     alGenBuffers(1, &buffer);
     if(!LoadMP3File(file,data, format, freq)) {}
     alBufferData(buffer, format, data.data(), data.size(), freq);
-    return buffer;
+    
+    alGenSources(1, &source);
+    alSourcei(source, AL_BUFFER, buffer);
+    return source;
+    alDeleteBuffers(1, &buffer);
 }
 
 DEADuint DEAD_Load_AIFF(const char* file)
 {
     ALuint buffer;
+    ALuint source;
 
     std::vector<char> data;
     ALenum format;
@@ -62,12 +78,17 @@ DEADuint DEAD_Load_AIFF(const char* file)
     alGenBuffers(1, &buffer);
     if(!LoadAIFFFile(file,data, format, freq)) {}
     alBufferData(buffer, format, data.data(), data.size(), freq);
-    return buffer;
+    
+    alGenSources(1, &source);
+    alSourcei(source, AL_BUFFER, buffer);
+    return source;
+    alDeleteBuffers(1, &buffer);
 }
 
 DEADuint DEAD_Load_FLAC(const char* file)
 {
     ALuint buffer;
+    ALuint source;
 
     std::vector<char> data;
     ALenum format;
@@ -76,12 +97,17 @@ DEADuint DEAD_Load_FLAC(const char* file)
     alGenBuffers(1, &buffer);
     if(!LoadFLACFile(file,data, format, freq)) {}
     alBufferData(buffer, format, data.data(), data.size(), freq);
-    return buffer;
+    
+    alGenSources(1, &source);
+    alSourcei(source, AL_BUFFER, buffer);
+    return source;
+    alDeleteBuffers(1, &buffer);
 }
 
 DEADuint DEAD_Load_AAC(const char* file)
 {
     ALuint buffer;
+    ALuint source;
 
     std::vector<char> data;
     ALenum format;
@@ -90,12 +116,17 @@ DEADuint DEAD_Load_AAC(const char* file)
     alGenBuffers(1, &buffer);
     if(!LoadAACFile(file,data, format, freq)) {}
     alBufferData(buffer, format, data.data(), data.size(), freq);
-    return buffer;
+    
+    alGenSources(1, &source);
+    alSourcei(source, AL_BUFFER, buffer);
+    return source;
+    alDeleteBuffers(1, &buffer);
 }
 
 DEADuint DEAD_Load_APE(const char* file)
 {
     ALuint buffer;
+    ALuint source;
 
     std::vector<char> data;
     ALenum format;
@@ -104,12 +135,17 @@ DEADuint DEAD_Load_APE(const char* file)
     alGenBuffers(1, &buffer);
     if(!LoadAPEFile(file,data, format, freq)) {}
     alBufferData(buffer, format, data.data(), data.size(), freq);
-    return buffer;
+    
+    alGenSources(1, &source);
+    alSourcei(source, AL_BUFFER, buffer);
+    return source;
+    alDeleteBuffers(1, &buffer);
 }
 
 DEADuint DEAD_Load_MIDI(const char* file)
 {
     ALuint buffer;
+    ALuint source;
 
     std::vector<char> data;
     ALenum format;
@@ -118,12 +154,17 @@ DEADuint DEAD_Load_MIDI(const char* file)
     alGenBuffers(1, &buffer);
     if(!LoadMIDIFile(file,data, format, freq)) {}
     alBufferData(buffer, format, data.data(), data.size(), freq);
-    return buffer;
+    
+    alGenSources(1, &source);
+    alSourcei(source, AL_BUFFER, buffer);
+    return source;
+    alDeleteBuffers(1, &buffer);
 }
 
 DEADuint DEAD_Load_MPEG4(const char* file)
 {
     ALuint buffer;
+    ALuint source;
 
     std::vector<char> data;
     ALenum format;
@@ -132,7 +173,11 @@ DEADuint DEAD_Load_MPEG4(const char* file)
     alGenBuffers(1, &buffer);
     if(!LoadMPEG4File(file,data, format, freq)) {}
     alBufferData(buffer, format, data.data(), data.size(), freq);
-    return buffer;
+    
+    alGenSources(1, &source);
+    alSourcei(source, AL_BUFFER, buffer);
+    return source;
+    alDeleteBuffers(1, &buffer);
 }
 
 void DEAD_Init()
@@ -152,6 +197,7 @@ void DEAD_Init()
     alcMakeContextCurrent(context);
 }
 
+/*
 DEADuint DEAD_Set_Audio(DEADuint buffer)
 {
     ALuint source;
@@ -159,6 +205,7 @@ DEADuint DEAD_Set_Audio(DEADuint buffer)
     alSourcei(source, AL_BUFFER, buffer);
     return source;
 }
+*/
 
 void DEAD_Set_Audio2D(DEADuint s, DEADfloat x, DEADfloat y)
 {
@@ -233,10 +280,12 @@ void DEAD_Free()
     alcCloseDevice(device);
 }
 
+/*
 void DEAD_Free_Buffer(DEADuint buffer)
 {
    return alDeleteBuffers(1, &buffer);
 }
+*/
 
 void DEAD_Free_Audio(DEADuint audio)
 {

@@ -6,7 +6,6 @@
 int main()
 {
     std::string file;
-    DEADuint buffer;
     DEADuint audio;
     
     DEAD_Init();
@@ -15,14 +14,12 @@ int main()
     std::cout<<"输入文件名\n";
     std::cin>>file;
 
-    buffer = DEAD_Load_OGG(file.c_str());
-    audio = DEAD_Set_Audio(buffer);
+    audio = DEAD_Load_OGG(file.c_str());
     
     DEAD_Play_AudioToEnd(audio);
 
     DEAD_Free();
     DEAD_Free_Audio(audio);
-    DEAD_Free_Buffer(buffer);
 
     system("pause");
     return 0;
